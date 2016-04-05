@@ -16,6 +16,7 @@
 		FA54F1CA1CB35A7C009C9C30 /* YNTableViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F1C91CB35A7C009C9C30 /* YNTableViewUITests.swift */; };
 		FA54F1D81CB38415009C9C30 /* masterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F1D71CB38415009C9C30 /* masterViewController.swift */; };
 		FA54F1DA1CB390F3009C9C30 /* YNKitTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F1D91CB390F3009C9C30 /* YNKitTools.swift */; };
+		FA54F1DC1CB3B1BE009C9C30 /* UIView+frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F1DB1CB3B1BE009C9C30 /* UIView+frame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		FA54F1CB1CB35A7C009C9C30 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA54F1D71CB38415009C9C30 /* masterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = masterViewController.swift; sourceTree = "<group>"; };
 		FA54F1D91CB390F3009C9C30 /* YNKitTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNKitTools.swift; sourceTree = "<group>"; };
+		FA54F1DB1CB3B1BE009C9C30 /* UIView+frame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+frame.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				FA54F1B21CB35A7C009C9C30 /* LaunchScreen.storyboard */,
 				FA54F1B51CB35A7C009C9C30 /* Info.plist */,
 				FA54F1D91CB390F3009C9C30 /* YNKitTools.swift */,
+				FA54F1DB1CB3B1BE009C9C30 /* UIView+frame.swift */,
 			);
 			path = YNTableView;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA54F1DC1CB3B1BE009C9C30 /* UIView+frame.swift in Sources */,
 				FA54F1D81CB38415009C9C30 /* masterViewController.swift in Sources */,
 				FA54F1AC1CB35A7C009C9C30 /* ViewController.swift in Sources */,
 				FA54F1AA1CB35A7C009C9C30 /* AppDelegate.swift in Sources */,

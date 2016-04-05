@@ -9,11 +9,16 @@
 import UIKit
 
 
+/**!
+ *  声明协议 @objc是关键字
+ *  @brief 详情:<https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Protocols.html>
+ */
 @objc public protocol YNKitToolsDelegate : NSObjectProtocol{
     
-    //public func (tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
-    optional func tableViewNumberOfRowsInSection (section : Int)
-    optional func tableViewDidSelectRowAtIndexPath (indexPath : NSIndexPath)
+    //获取点击的位置
+    optional func tableViewDidSelectRowAtIndexPath(indexPath : NSIndexPath)
+    
+    optional func tableViewForRowWithIndexPath(indexPath : NSIndexPath, type : UITableViewCellAccessoryType , complete : ((Bool) -> Void)?)
 }
 
 
@@ -23,15 +28,13 @@ class YNKitTools: NSObject , UITableViewDelegate, UITableViewDataSource{
     var dataArray : NSArray?
     weak var delegate: YNKitToolsDelegate!
     
-    
-    
+
     // MARK:    -----  tableView delegate -----
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         
         return self.dataArray!.count
     }
-    
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         
@@ -45,31 +48,42 @@ class YNKitTools: NSObject , UITableViewDelegate, UITableViewDataSource{
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         //代理
-        if (delegate != nil && delegate!.respondsToSelector(#selector(YNKitToolsDelegate.tableViewNumberOfRowsInSection(_:)))) {
-            
-            NSLog("ReturnVoid is implemented")
-            delegate.tableViewNumberOfRowsInSection!(indexPath.row)
-        }
+        if delegate != nil && delegate!.respondsToSelector(#selector(YNKitToolsDelegate.tableViewDidSelectRowAtIndexPath(_:))) {
         
-        if indexPath.row == 1 {
-            
-            //let vc = masterViewController()
-            //vc.title = "masterViewController"
-            //vc.view.backgroundColor = UIColor.blueColor()
-            //self.navigationController?.pushViewController(vc, animated: true)
+            delegate.tableViewDidSelectRowAtIndexPath!(indexPath)
+            NSLog("ReturnVoid is implemented")
         }
     }
     
     
+    func tableView(tableView: UITableView, accessoryTypeForRowWithIndexPath indexPath: NSIndexPath) -> UITableViewCellAccessoryType {
+        
+        return UITableViewCellAccessoryType.DisclosureIndicator
+    }
+    
+    
+    // MARK:    ----- label create ------
+    
+    internal func createLabel(frame : CGRect, title : String?, font : CGFloat ,textAlignment : NSTextAlignment , textColor : UIColor) -> UILabel{
+        
+        let label = UILabel.init(frame: frame)
+        label.text = title;
+        label.font = UIFont.systemFontOfSize(font)
+        label.textAlignment = textAlignment
+        label.textColor = textColor
+        
+        return label
+    }
+    
     
     // MARK:    ----- button create ------
     
-    internal func createButton(frame : CGRect, title : String? , font : UIFont) -> UIButton?{
+    internal func createButton(frame : CGRect, title : String? , font : CGFloat) -> UIButton?{
         
         let button = UIButton.init(type: UIButtonType.System)
         button.frame = frame;
         button.setTitle(title, forState: UIControlState.Normal)
-        button.titleLabel!.font = font
+        button.titleLabel!.font = UIFont.boldSystemFontOfSize(font)
         
         return button
     }
