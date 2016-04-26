@@ -4,10 +4,15 @@
 //
 //  Created by qiyun on 16/4/5.
 //  Copyright © 2016年 ProDrone. All rights reserved.
-//
+// <https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Protocols.html>
 
 import UIKit
 
+func someFunctionThatTakesAClosure(closure: (aString : String) -> String) {
+    
+    // function body goes here
+    
+}
 
 /**!
  *  声明协议 @objc是关键字
@@ -18,7 +23,13 @@ import UIKit
     //获取点击的位置
     optional func tableViewDidSelectRowAtIndexPath(indexPath : NSIndexPath)
     
-    optional func tableViewForRowWithIndexPath(indexPath : NSIndexPath, type : UITableViewCellAccessoryType , complete : ((Bool) -> Void)?)
+    /**
+     设置指定cell的附件类型
+     
+     - parameter indexPath: <#indexPath description#>
+     - parameter complete:  <#complete description#>
+     */
+    optional func tableViewForRowWithIndexPath(indexPath : NSIndexPath , complete : ((type : UITableViewCellAccessoryType) -> Void)?)
 }
 
 
@@ -39,7 +50,9 @@ class YNKitTools: NSObject , UITableViewDelegate, UITableViewDataSource{
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "MyTestCell")
+        
         cell.textLabel?.text = "Row #  \(self.dataArray!.objectAtIndex(indexPath.row))"
+        
         return cell
     }
     
@@ -53,6 +66,16 @@ class YNKitTools: NSObject , UITableViewDelegate, UITableViewDataSource{
             delegate.tableViewDidSelectRowAtIndexPath!(indexPath)
             NSLog("ReturnVoid is implemented")
         }
+        
+        let timer :NSTimer? = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("action"), userInfo: nil, repeats: true)
+        timer?.invalidate()
+        
+        someFunctionThatTakesAClosure (){_ in
+            
+            NSLog("body goes here ... ")
+            return "123"
+        }
+        
     }
     
     
@@ -62,12 +85,19 @@ class YNKitTools: NSObject , UITableViewDelegate, UITableViewDataSource{
     }
     
     
+    func tableView(tableView: UITableView, indexPath: NSIndexPath, complete: ((type : UITableViewCellAccessoryType) -> Void)?){
+
+        let cell : UITableViewCell = tableView.cellForRowAtIndexPath(indexPath)!
+        cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+    }
+    
+    
     // MARK:    ----- label create ------
     
     internal func createLabel(frame : CGRect, title : String?, font : CGFloat ,textAlignment : NSTextAlignment , textColor : UIColor) -> UILabel{
         
         let label = UILabel.init(frame: frame)
-        label.text = title;
+        label.text = title
         label.font = UIFont.systemFontOfSize(font)
         label.textAlignment = textAlignment
         label.textColor = textColor
@@ -93,15 +123,27 @@ class YNKitTools: NSObject , UITableViewDelegate, UITableViewDataSource{
     
     internal func createTableView(frame : CGRect , datas : NSArray) -> UITableView{
         
+        someFunctionThatTakesAClosure { (aString) -> String in
+            
+            NSLog("block = \(123)")
+            return "345"
+        }
+
         self.dataArray = datas
         
         let tableView = UITableView(frame: frame, style: UITableViewStyle.Plain)
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView.init(frame: frame)
-        tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine;
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.SingleLine
         
         return tableView
     }
 
 }
+
+
+
+
+
+

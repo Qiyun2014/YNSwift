@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA54A6A11CBC82AC00DC87F1 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA54A6A01CBC82AC00DC87F1 /* Social.framework */; };
+		FA54A6A31CBC968000DC87F1 /* 123.png in Resources */ = {isa = PBXBuildFile; fileRef = FA54A6A21CBC968000DC87F1 /* 123.png */; };
 		FA54F1AA1CB35A7C009C9C30 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F1A91CB35A7C009C9C30 /* AppDelegate.swift */; };
 		FA54F1AC1CB35A7C009C9C30 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F1AB1CB35A7C009C9C30 /* ViewController.swift */; };
 		FA54F1AF1CB35A7C009C9C30 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA54F1AD1CB35A7C009C9C30 /* Main.storyboard */; };
@@ -17,6 +19,7 @@
 		FA54F1D81CB38415009C9C30 /* masterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F1D71CB38415009C9C30 /* masterViewController.swift */; };
 		FA54F1DA1CB390F3009C9C30 /* YNKitTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F1D91CB390F3009C9C30 /* YNKitTools.swift */; };
 		FA54F1DC1CB3B1BE009C9C30 /* UIView+frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA54F1DB1CB3B1BE009C9C30 /* UIView+frame.swift */; };
+		FA5D90961CB4ADC0000AA0E6 /* FlipPresentAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5D90951CB4ADC0000AA0E6 /* FlipPresentAnimationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA54A6A01CBC82AC00DC87F1 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		FA54A6A21CBC968000DC87F1 /* 123.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 123.png; sourceTree = "<group>"; };
 		FA54F1A61CB35A7B009C9C30 /* YNTableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YNTableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA54F1A91CB35A7C009C9C30 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA54F1AB1CB35A7C009C9C30 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -53,6 +58,7 @@
 		FA54F1D71CB38415009C9C30 /* masterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = masterViewController.swift; sourceTree = "<group>"; };
 		FA54F1D91CB390F3009C9C30 /* YNKitTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNKitTools.swift; sourceTree = "<group>"; };
 		FA54F1DB1CB3B1BE009C9C30 /* UIView+frame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+frame.swift"; sourceTree = "<group>"; };
+		FA5D90951CB4ADC0000AA0E6 /* FlipPresentAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlipPresentAnimationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA54A6A11CBC82AC00DC87F1 /* Social.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +90,7 @@
 		FA54F19D1CB35A7B009C9C30 = {
 			isa = PBXGroup;
 			children = (
+				FA54A6A01CBC82AC00DC87F1 /* Social.framework */,
 				FA54F1A81CB35A7C009C9C30 /* YNTableView */,
 				FA54F1BD1CB35A7C009C9C30 /* YNTableViewTests */,
 				FA54F1C81CB35A7C009C9C30 /* YNTableViewUITests */,
@@ -103,8 +111,10 @@
 		FA54F1A81CB35A7C009C9C30 /* YNTableView */ = {
 			isa = PBXGroup;
 			children = (
+				FA54A6A21CBC968000DC87F1 /* 123.png */,
 				FA54F1A91CB35A7C009C9C30 /* AppDelegate.swift */,
 				FA54F1AB1CB35A7C009C9C30 /* ViewController.swift */,
+				FA5D90951CB4ADC0000AA0E6 /* FlipPresentAnimationController.swift */,
 				FA54F1D71CB38415009C9C30 /* masterViewController.swift */,
 				FA54F1AD1CB35A7C009C9C30 /* Main.storyboard */,
 				FA54F1B01CB35A7C009C9C30 /* Assets.xcassets */,
@@ -238,6 +248,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA54A6A31CBC968000DC87F1 /* 123.png in Resources */,
 				FA54F1B41CB35A7C009C9C30 /* LaunchScreen.storyboard in Resources */,
 				FA54F1B11CB35A7C009C9C30 /* Assets.xcassets in Resources */,
 				FA54F1AF1CB35A7C009C9C30 /* Main.storyboard in Resources */,
@@ -268,6 +279,7 @@
 				FA54F1DC1CB3B1BE009C9C30 /* UIView+frame.swift in Sources */,
 				FA54F1D81CB38415009C9C30 /* masterViewController.swift in Sources */,
 				FA54F1AC1CB35A7C009C9C30 /* ViewController.swift in Sources */,
+				FA5D90961CB4ADC0000AA0E6 /* FlipPresentAnimationController.swift in Sources */,
 				FA54F1AA1CB35A7C009C9C30 /* AppDelegate.swift in Sources */,
 				FA54F1DA1CB390F3009C9C30 /* YNKitTools.swift in Sources */,
 			);
